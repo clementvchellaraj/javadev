@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: city
+  datasource:
+   url: jdbc:mysql://${MYSQL_HOST_SERVICE}/${MYSQL_DATABASE}?autoReconnect=true&useSSL=false
+   username: ${MYSQL_USERNAME}  
+   password: ${MYSQL_PASSWORD}  
+#   url: jdbc:mysql://server727648767.mysql.database.azure.com/flexibleserverdb?autoReconnect=true&useSSL=false
+#   url: jdbc:mysql://${MYSQL_HOST_SERVICE}/${MYSQL_DATABASE}
+#   username: ${MYSQL_USERNAME}  
+#   password: ${MYSQL_PASSWORD}  
+   
+  jpa:
+   hibernate:
+    ddl-auto: update 
+   show-sql: true
+   properties:
+     hibernate:
+        format-sql: true
+ 
+logging: 
+  pattern: 
+   console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"    
