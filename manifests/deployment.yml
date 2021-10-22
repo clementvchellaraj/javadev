@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "clementakscluster-988a"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "clementakscluster-988a"
+  template:
+    metadata:
+      labels:
+        app: "clementakscluster-988a"
+    spec:
+      containers:
+        - name: "clementakscluster-988a"
+          image: "clementcontainerregistry.azurecr.io/clementakscluster"
+          ports:
+          - containerPort: 8080
