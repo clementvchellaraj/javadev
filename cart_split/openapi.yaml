@@ -1,13 +1,37 @@
 openapi: 3.0.0
 info:
-  title: Cart Service API
-  version: /v2.1.25a
-  description: Cart Service API
+  version: 1.0.0
+  title: Zoro Cart API
+  termsOfService: 'https://zoro.com/terms/'
+  contact:
+    email: contact@zoro.com
+    url: 'http://zoro.com/contact'
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+  x-logo:
+    url: 'https://www.zoro.com/static/cms/img/logos/zoro-logo-color-one-line-dot-com-high-res.png'
+  description:
+    $ref: info-description.md
 servers:
   - url: /v1
 tags:
-  - name: health
-    description: Health
+  - name: cart
+    description: |-
+        The cart represents a user shopping cart carrying the items. The cart can contain zero or many items.
+        A cart that is not empty can be checked out for fulfillment.
+  - name: catalog
+    description: |-
+        The catalog represents the catalog of products in the Zoro catalog that can be ordered and shipped. The catalog
+        is tiered into 3 layers to enable drilldown and search based on product categories.
+x-tagGroups:
+  - name: Buy Services
+    tags:
+      - cart
+  - name: Search Services
+    tags:
+      - catalog
+  
 paths:
   /cart/health:
     $ref: paths/cart_health.yaml
