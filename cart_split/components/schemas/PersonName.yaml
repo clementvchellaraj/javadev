@@ -1,0 +1,5 @@
+type: string
+example: Bill Smith
+description: Customer Name for shipping / billing
+pattern: ^\w(?!(.*\s\W+.*)$).*$
+maxLength: 35

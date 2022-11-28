@@ -1,0 +1,13 @@
+type: object
+properties:
+  status:
+    type: number
+    example: 400
+  title:
+    type: string
+    example: Item not Live in Product Cache
+  detail:
+    type: object
+  type:
+    type: string
+    example: channelNotLive

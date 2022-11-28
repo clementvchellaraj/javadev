@@ -1,0 +1,14 @@
+type: object
+properties:
+  status:
+    type: number
+    example: 404
+  title:
+    type: string
+    example: Cart not found
+  detail:
+    type: string
+    example: Unable to locate cart in Firestore
+  type:
+    type: string
+    example: cartNotFound

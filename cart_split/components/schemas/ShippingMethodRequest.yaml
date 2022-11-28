@@ -1,0 +1,9 @@
+description: Apply shipping method to the cart
+type: object
+additionalProperties: false
+required:
+  - id
+properties:
+  id:
+    type: string
+    example: '03'

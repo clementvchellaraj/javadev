@@ -1,0 +1,8 @@
+get:
+  operationId: cart_service.api.cart.clearcache
+  summary: Clear all cached endpoints
+  tags:
+    - cache
+  responses:
+    '200':
+      description: Cache Cleared!

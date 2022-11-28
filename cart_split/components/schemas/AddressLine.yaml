@@ -1,0 +1,5 @@
+type: string
+example: 909 Asbury Dr
+maxLength: 35
+items:
+  type: string

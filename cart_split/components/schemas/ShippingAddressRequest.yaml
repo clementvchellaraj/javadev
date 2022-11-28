@@ -1,0 +1,8 @@
+description: Request to attach/update a shipping address
+type: object
+additionalProperties: false
+required:
+  - shippingAddress
+properties:
+  shippingAddress:
+    $ref: .\ShippingAddress.yaml

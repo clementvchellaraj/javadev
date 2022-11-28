@@ -1,0 +1,59 @@
+post:
+  operationId: cart_service.api.cart.submit_order
+  summary: Send cart to order service
+  description: >-
+    All Credit Card orders must call order service's /order/new endpoint and
+    include the WB number as order id in the request body, else an error is
+    returned.  Not required by contract to allow PayPal order processing to
+    remain unchanged.
+  tags:
+    - cart
+  parameters:
+    - $ref: ..\components\parameters\cartId.yaml
+  security:
+    - oktaJwt: []
+    - {}
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          x-body-name: order_request_dict
+          $ref: ..\components\schemas\SubmitOrderRequest.yaml
+  responses:
+    '200':
+      description: Submitted the order successfully
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\SubmitOrderResponse.yaml
+    '400':
+      description: Error submitting the order
+      content:
+        application/json:
+          schema:
+            oneOf:
+              - $ref: ..\components\schemas\Invalid-Email-Error.yaml
+              - $ref: ..\components\schemas\Empty-Cart-Error.yaml
+              - $ref: ..\components\schemas\Invalid-Shipping-Method-Error.yaml
+              - $ref: ..\components\schemas\Invalid-Billing-Address-Error.yaml
+              - $ref: ..\components\schemas\Invalid-Shipping-Address-Error.yaml
+              - $ref: ..\components\schemas\Invalid-Expiration-Date-Error.yaml
+              - $ref: ..\components\schemas\Invalid-Credit-Card-Type-Error.yaml
+              - $ref: ..\components\schemas\Cart-Processing-Error.yaml
+              - $ref: ..\components\schemas\Validation-Error.yaml
+              - $ref: ..\components\schemas\Tax-Service-Error.yaml
+              - $ref: ..\components\schemas\Order-Service-Error.yaml
+              - $ref: ..\components\schemas\Item-Not-Available-Error.yaml
+    '404':
+      description: Error submitting the order
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Cart-Not-Found-Error.yaml
+    '500':
+      description: Error submitting the order
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\500-Error.yaml

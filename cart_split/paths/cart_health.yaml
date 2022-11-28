@@ -1,0 +1,8 @@
+get:
+  operationId: cart_service.api.health.health
+  summary: Health Check
+  tags:
+    - health
+  responses:
+    '200':
+      description: Healthy!

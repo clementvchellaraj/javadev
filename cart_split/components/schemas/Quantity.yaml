@@ -1,0 +1,4 @@
+description: The item quantity
+example: 5
+type: integer
+format: int32

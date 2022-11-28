@@ -1,0 +1,11 @@
+description: Shipping Method
+type: object
+properties:
+  rate:
+    type: number
+  name:
+    type: string
+    example: UPS Shipping Ground
+  id:
+    type: string
+    example: '01'

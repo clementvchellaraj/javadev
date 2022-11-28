@@ -1,0 +1,104 @@
+description: The Cart
+type: object
+properties:
+  cartId:
+    type: string
+    description: The unique cart identifier
+    example: RHTAybeR72iE2dsQ2JXu
+  cartDiscount:
+    type: number
+    description: The order level discount amount
+    example: 0
+  discountTotal:
+    type: number
+    description: The total discount amount
+    example: 0
+  invalidItems:
+    type: array
+    description: The list of items not found in the Zoro product cache
+    example:
+      - H9999999
+    items:
+      type: string
+  itemCount:
+    type: number
+    description: The total number of items
+  items:
+    $ref: .\ResponseItems.yaml
+  freightTotal:
+    type: number
+    description: The total freight cost for handling freight items
+    example: 50
+  priceTotal:
+    type: number
+    description: The total of the items
+    example: 100
+  promo:
+    type: string
+    description: The currently applied promo
+    example: DISCOUNT20
+  customerId:
+    type: string
+    description: The ct customer id
+    example: eade-e3ebca-eageo776-ofcg3aeo
+  promotion:
+    type: object
+    properties:
+      isValid:
+        type: boolean
+        description: The promo has affected the cart total
+  promotionApplied:
+    type: boolean
+    description: Indicates the current promo has affected the cart total
+  reasonPromotionInvalid:
+    type: string
+    description: Reason promotion was not applied
+    example:
+      - Order Does Not Include Minimum Purchase Required By Promotion PROMO_CODE
+      - >-
+        Order Does Not Include All Minimum Purchases Required By Promotion
+        PROMO_CODE
+      - Promotion PROMO_CODE Requires Minimum Eligible Qty 10, Eligible Qty 5
+      - >-
+        Promotion PROMO_CODE Requires Minimum Eligible Value $50.00, Eligible
+        Value $35.50
+  shippingMethod:
+    $ref: .\ShippingMethodResponse.yaml
+  restrictedStates:
+    type: array
+    description: The list of restricted states for all products in the cart
+    example:
+      - CA
+      - CT
+      - DC
+      - DE
+      - IL
+      - IN
+      - MA
+      - MD
+      - ME
+      - MI
+      - NH
+      - NJ
+      - NY
+      - OH
+      - PA
+      - RI
+      - UT
+      - VA
+    items:
+      type: string
+  subTotal:
+    type: number
+    description: The cart total before tax and shipping but after any item level discounts
+    example: 100
+  taxTotal:
+    type: number
+    example: 23
+  taxCalculated:
+    type: boolean
+    example: true
+  total:
+    type: number
+    description: The total including tax, shipping method rate and discounts
+    example: 123

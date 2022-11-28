@@ -1,0 +1,9 @@
+description: Apply promo to cart using given code
+type: object
+additionalProperties: false
+required:
+  - promo
+properties:
+  promo:
+    type: string
+    example: 50OFF123

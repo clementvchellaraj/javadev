@@ -1,0 +1,51 @@
+post:
+  operationId: cart_service.api.cart.set_shipping_address
+  summary: Set Shipping Address
+  tags:
+    - cart
+  parameters:
+    - $ref: ..\components\parameters\cartId.yaml
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          x-body-name: shipping_dict
+          $ref: ..\components\schemas\ShippingAddressRequest.yaml
+  security:
+    - oktaJwt: []
+    - {}
+  responses:
+    '200':
+      description: Shipping Address Set Successfully
+      content:
+        application/json:
+          schema:
+            oneOf:
+              - $ref: ..\components\schemas\CartResponse.yaml
+              - $ref: ..\components\schemas\SubmitOrderResponse.yaml
+    '400':
+      description: Error setting a shipping address
+      content:
+        application/json:
+          schema:
+            oneOf:
+              - $ref: ..\components\schemas\Cart-Processing-Error.yaml
+              - $ref: ..\components\schemas\Invalid-Shipping-State-Error.yaml
+              - $ref: ..\components\schemas\Po-Box-Not-Allowed-Error.yaml
+              - $ref: ..\components\schemas\Invalid-Shipping-Zip-Error.yaml
+              - $ref: ..\components\schemas\Validation-Error.yaml
+              - $ref: ..\components\schemas\Tax-Service-Error.yaml
+    '404':
+      description: Error setting a shipping address
+      content:
+        application/json:
+          schema:
+            oneOf:
+              - $ref: ..\components\schemas\Cart-Not-Found-Error.yaml
+    '500':
+      description: Error setting the shipping address
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\500-Error.yaml

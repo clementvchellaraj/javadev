@@ -1,0 +1,74 @@
+put:
+  operationId: cart_service.api.cart.apply_promo
+  summary: Apply promotion to cart
+  tags:
+    - cart
+  parameters:
+    - $ref: ..\components\parameters\cartId.yaml
+  security:
+    - oktaJwt: []
+    - {}
+  requestBody:
+    content:
+      application/json:
+        schema:
+          x-body-name: request_dict
+          $ref: ..\components\schemas\PromoRequest.yaml
+  responses:
+    '200':
+      description: Promo Applied
+      content:
+        application/json:
+          schema:
+            oneOf:
+              - $ref: ..\components\schemas\CartResponse.yaml
+              - $ref: ..\components\schemas\SubmitOrderResponse.yaml
+    '400':
+      description: Error Applying Promo
+      content:
+        application/json:
+          schema:
+            oneOf:
+              - $ref: ..\components\schemas\Cart-Processing-Error.yaml
+              - $ref: ..\components\schemas\Promo-Service-Error.yaml
+              - $ref: ..\components\schemas\Promo-Code-Not-Found-Error.yaml
+              - $ref: ..\components\schemas\Invalid-Promo-Code-Error.yaml
+              - $ref: ..\components\schemas\Validation-Error.yaml
+              - $ref: ..\components\schemas\Tax-Service-Error.yaml
+    '404':
+      description: Related Cart Does Not Exist
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Cart-Not-Found-Error.yaml
+delete:
+  operationId: cart_service.api.cart.remove_promo
+  summary: Remove promotion from cart
+  tags:
+    - cart
+  parameters:
+    - $ref: ..\components\parameters\cartId.yaml
+  security:
+    - oktaJwt: []
+    - {}
+  responses:
+    '200':
+      description: Promo Removed
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\CartResponse.yaml
+    '400':
+      description: Error Removing Promo
+      content:
+        application/json:
+          schema:
+            oneOf:
+              - $ref: ..\components\schemas\400-Error.yaml
+              - $ref: ..\components\schemas\Tax-Service-Error.yaml
+    '404':
+      description: Related Cart Does Not Exist
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\404-Error.yaml

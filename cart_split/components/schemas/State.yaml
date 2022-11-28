@@ -1,0 +1,5 @@
+description: Destination state code. Length is not validated.
+example: IL
+minLength: 2
+maxLength: 2
+type: string

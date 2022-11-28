@@ -1,0 +1,42 @@
+type: object
+required:
+  - token
+  - type
+properties:
+  type:
+    type: string
+    enum:
+      - CREDIT_CARD
+      - PAYPAL
+  token:
+    type: string
+    example: '3529893314302230706689'
+    nullable: true
+  cardType:
+    type: string
+    enum:
+      - VISA
+      - MASTERCARD
+      - AMEX
+      - DISCOVER
+  expiration:
+    type: string
+    minLength: 5
+    maxLength: 5
+    pattern: ^([0-9]{2}/[0-9]{2})$
+    example: 09/22
+  decision:
+    type: string
+    example: accepted
+  reasonCode:
+    type: string
+    example: '6577'
+  requestId:
+    type: string
+    example: '723442454343'
+  authCode:
+    type: string
+    example: '4356789'
+  deviceFingerprintId:
+    type: string
+    description: Device fingerprint for fraud protection

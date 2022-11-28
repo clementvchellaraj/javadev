@@ -1,0 +1,13 @@
+type: object
+properties:
+  status:
+    type: number
+    example: 400
+  title:
+    type: string
+    example: Invalid Shipping Method
+  detail:
+    type: object
+  type:
+    type: string
+    example: invalidShippingMethod

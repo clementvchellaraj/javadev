@@ -1,0 +1,14 @@
+type: object
+properties:
+  status:
+    type: number
+    example: 400
+  title:
+    type: string
+    example: Order is still processing
+  detail:
+    type: string
+    example: Order is still processing
+  type:
+    type: string
+    example: processing

@@ -1,0 +1,14 @@
+type: object
+properties:
+  status:
+    type: number
+    example: 400
+  title:
+    type: string
+    example: Bad Request
+  detail:
+    type: string
+    example: Email address is invalid
+  type:
+    type: string
+    example: invalidEmail

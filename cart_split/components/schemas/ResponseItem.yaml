@@ -1,0 +1,112 @@
+description: Zoro cart item
+type: object
+required:
+  - zoroNo
+  - qty
+properties:
+  zoroNo:
+    $ref: .\ZoroNumber.yaml
+  qty:
+    $ref: .\Quantity.yaml
+  title:
+    type: string
+    description: The title of the Zoro product
+    example: Socket Adapter Set,6 pcs.
+  erpId:
+    type: string
+  price:
+    type: number
+    format: float
+    description: The price of the item
+    example: 10.75
+  priceTotal:
+    type: number
+    format: float
+    description: The total price of the item (qty * price)
+    example: 32.25
+  freightCost:
+    type: number
+    format: float
+    description: The base cost for freight handling this item
+    example: 10
+  freightTotal:
+    type: number
+    format: float
+    description: The total cost for freight handling this item
+    example: 10
+  minRetailQty:
+    type: number
+    format: integer
+    description: The minimum order quantity
+    example: 1
+  maxOrderQty:
+    type: number
+    format: integer
+    nullable: true
+    description: The maximum quantity per order for this item
+    example: 5
+  isAuthenticatedCheckoutOnly:
+    type: boolean
+    description: Indicates if the item can only be purchased by a logged in customer
+    example: false
+  promotionalTotal:
+    type: number
+    format: integer
+  promotionalDiscount:
+    type: number
+    format: integer
+  promotionalEligible:
+    type: boolean
+    example: true
+  image:
+    type: string
+    description: The filename of the product image
+    example: Z2wOFuocpEx_.JPG
+  restrictedStates:
+    type: array
+    description: The list of restricted states
+    example:
+      - CA
+      - CT
+      - DC
+      - DE
+      - IL
+      - IN
+      - MA
+      - MD
+      - ME
+      - MI
+      - NH
+      - NJ
+      - NY
+      - OH
+      - PA
+      - RI
+      - UT
+      - VA
+    items:
+      type: string
+  limitedShipping:
+    type: boolean
+    example: false
+  hasCommercialShippingRestriction:
+    type: boolean
+    description: Indicates if the product can only be sent to a commercial address
+    example: false
+  url:
+    type: string
+    format: uri
+    description: The product URL
+    example: /i/G1739841/
+  salesStatus:
+    type: string
+    example: ST
+  leadTime:
+    type: string
+    example: '0'
+  promotionalDiscountApplied:
+    type: boolean
+    example: true
+  orderChannel:
+    type: string
+    example: GRO

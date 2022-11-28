@@ -1,0 +1,13 @@
+type: object
+properties:
+  status:
+    type: number
+    example: 400
+  title:
+    type: string
+    example: Please supply a credit card type
+  detail:
+    type: object
+  type:
+    type: string
+    example: invalidCreditCardType

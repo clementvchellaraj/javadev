@@ -1,0 +1,14 @@
+type: object
+properties:
+  status:
+    type: number
+    example: 400
+  title:
+    type: string
+    example: Bad Request
+  detail:
+    type: string
+    example: The cart has items that cannot be shipped
+  type:
+    type: string
+    example: restrictedSkus

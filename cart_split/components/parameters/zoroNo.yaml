@@ -1,0 +1,6 @@
+name: zoroNo
+description: The Zoro Number for an item
+in: path
+required: true
+schema:
+  $ref: ..\schemas\ZoroNumber.yaml

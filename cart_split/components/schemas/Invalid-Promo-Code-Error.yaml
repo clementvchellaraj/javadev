@@ -1,0 +1,19 @@
+type: object
+properties:
+  status:
+    type: number
+    example: 400
+  title:
+    type: string
+    example:
+      - Invalid Promo Code
+      - Promotion PROMO_CODE is Used
+      - Promotion PROMO_CODE is Not Public
+      - Promotion PROMO_CODE is Inactive
+      - Promotion PROMO_CODE Does Not Start Until Sat Feb 1 00:00:00 2020
+      - Promotion PROMO_CODE Ended On Tue Dec 31 06:00:00 2019
+  detail:
+    type: object
+  type:
+    type: string
+    example: invalidPromoCode

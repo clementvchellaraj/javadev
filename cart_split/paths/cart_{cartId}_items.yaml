@@ -1,0 +1,141 @@
+patch:
+  operationId: cart_service.api.cart.update_item_quantity
+  summary: Update item quantities
+  tags:
+    - cart
+  parameters:
+    - $ref: ..\components\parameters\cartId.yaml
+  security:
+    - oktaJwt: []
+    - {}
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          x-body-name: item_dict
+          $ref: ..\components\schemas\RequestItem.yaml
+  responses:
+    '200':
+      description: Updated the Cart Items successfully
+      content:
+        application/json:
+          schema:
+            oneOf:
+              - $ref: ..\components\schemas\CartResponse.yaml
+              - $ref: ..\components\schemas\SubmitOrderResponse.yaml
+    '400':
+      description: Error adding an item to the Cart
+      content:
+        application/json:
+          schema:
+            oneOf:
+              - $ref: ..\components\schemas\Cart-Processing-Error.yaml
+              - $ref: ..\components\schemas\Item-Channel-Not-Live-Error.yaml
+              - $ref: ..\components\schemas\Validation-Error.yaml
+              - $ref: ..\components\schemas\Tax-Service-Error.yaml
+              - $ref: ..\components\schemas\Item-Not-Found-Error.yaml
+    '404':
+      description: Error adding an item to the Cart
+      content:
+        application/json:
+          schema:
+            oneOf:
+              - $ref: ..\components\schemas\Cart-Not-Found-Error.yaml
+    '500':
+      description: Error Updating the Cart Items
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\500-Error.yaml
+put:
+  operationId: cart_service.api.cart.set_cart
+  summary: Update cart items
+  tags:
+    - cart
+  parameters:
+    - $ref: ..\components\parameters\cartId.yaml
+  security:
+    - oktaJwt: []
+    - {}
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          x-body-name: items_dict
+          $ref: ..\components\schemas\CartRequest.yaml
+  responses:
+    '200':
+      description: Updated the Cart successfully
+      content:
+        application/json:
+          schema:
+            oneOf:
+              - $ref: ..\components\schemas\CartResponse.yaml
+              - $ref: ..\components\schemas\SubmitOrderResponse.yaml
+    '400':
+      description: Error Updating the Cart
+      content:
+        application/json:
+          schema:
+            oneOf:
+              - $ref: ..\components\schemas\Validation-Error.yaml
+              - $ref: ..\components\schemas\Tax-Service-Error.yaml
+    '500':
+      description: Error Updating the Cart
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\500-Error.yaml
+post:
+  operationId: cart_service.api.cart.add_item
+  summary: Add an item to the cart
+  tags:
+    - cart
+  parameters:
+    - $ref: ..\components\parameters\cartId.yaml
+  security:
+    - oktaJwt: []
+    - {}
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          x-body-name: item_dict
+          $ref: ..\components\schemas\CartItemRequest.yaml
+  responses:
+    '200':
+      description: Added an item to the Cart successfully
+      content:
+        application/json:
+          schema:
+            oneOf:
+              - $ref: ..\components\schemas\CartResponse.yaml
+              - $ref: ..\components\schemas\SubmitOrderResponse.yaml
+    '400':
+      description: Error adding an item to the Cart
+      content:
+        application/json:
+          schema:
+            oneOf:
+              - $ref: ..\components\schemas\Cart-Processing-Error.yaml
+              - $ref: ..\components\schemas\Item-Channel-Not-Live-Error.yaml
+              - $ref: ..\components\schemas\Item-Not-Available-Error.yaml
+              - $ref: ..\components\schemas\Validation-Error.yaml
+              - $ref: ..\components\schemas\Tax-Service-Error.yaml
+              - $ref: ..\components\schemas\Item-Not-Found-Product-Cache-Error.yaml
+    '404':
+      description: Error adding an item to the Cart
+      content:
+        application/json:
+          schema:
+            oneOf:
+              - $ref: ..\components\schemas\Cart-Not-Found-Error.yaml
+    '500':
+      description: Error adding an item to the Cart
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\500-Error.yaml

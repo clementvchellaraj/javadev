@@ -1,0 +1,6 @@
+description: Submitted Order Number
+type: object
+properties:
+  orderId:
+    type: string
+    example: WB 123 4567 890

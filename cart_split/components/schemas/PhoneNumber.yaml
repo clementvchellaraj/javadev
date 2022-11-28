@@ -1,0 +1,6 @@
+description: Customer or company phone
+example: '8474840400'
+minLength: 10
+maxLength: 19
+type: string
+pattern: ^[0-9]*$

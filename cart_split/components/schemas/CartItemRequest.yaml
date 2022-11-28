@@ -1,0 +1,5 @@
+description: Request with a single item
+type: object
+properties:
+  item:
+    $ref: .\RequestItem.yaml

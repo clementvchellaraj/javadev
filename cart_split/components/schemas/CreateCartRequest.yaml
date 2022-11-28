@@ -1,0 +1,6 @@
+description: Request with one or more items
+type: object
+additionalProperties: false
+properties:
+  items:
+    $ref: .\RequestItems.yaml

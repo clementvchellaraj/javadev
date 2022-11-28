@@ -1,0 +1,14 @@
+type: object
+description: Tax Service Failure
+properties:
+  status:
+    type: number
+    example: 400
+  title:
+    type: string
+    example: Tax Service Exception
+  detail:
+    type: string
+  type:
+    type: string
+    example: taxServiceError

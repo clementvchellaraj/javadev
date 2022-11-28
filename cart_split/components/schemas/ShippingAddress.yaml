@@ -1,0 +1,35 @@
+description: Ship-to address
+type: object
+required:
+  - address1
+  - city
+  - state
+  - zip
+  - phoneNumber
+properties:
+  firstName:
+    $ref: .\PersonName.yaml
+  lastName:
+    $ref: .\PersonName.yaml
+  fullName:
+    $ref: .\PersonName.yaml
+  companyName:
+    $ref: .\CompanyName.yaml
+  address1:
+    $ref: .\AddressLine.yaml
+  address2:
+    $ref: .\AddressLine2.yaml
+  city:
+    $ref: .\City.yaml
+  state:
+    $ref: .\State.yaml
+  zip:
+    $ref: .\Zip.yaml
+  phoneNumber:
+    $ref: .\PhoneNumber.yaml
+  isDefaultShipping:
+    type: boolean
+    default: true
+  isDefaultBilling:
+    type: boolean
+    default: false

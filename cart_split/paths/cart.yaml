@@ -1,0 +1,64 @@
+post:
+  operationId: cart_service.api.cart.create_cart
+  summary: Create Cart
+  tags:
+    - cart
+  security:
+    - oktaJwt: []
+    - {}
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          x-body-name: items_dict
+          $ref: ..\components\schemas\CreateCartRequest.yaml
+  responses:
+    '200':
+      description: Created the Cart Successfully
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\CartResponse.yaml
+    '400':
+      description: Validation failed
+      content:
+        application/json:
+          schema:
+            oneOf:
+              - $ref: ..\components\schemas\Validation-Error.yaml
+              - $ref: ..\components\schemas\Tax-Service-Error.yaml
+    '500':
+      description: Error Creating the Cart
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\500-Error.yaml
+get:
+  operationId: cart_service.api.cart.get_authorized_cart
+  summary: Gets the cart
+  tags:
+    - cart
+  security:
+    - oktaJwt: []
+  responses:
+    '200':
+      description: Got the cart successfully
+      content:
+        application/json:
+          schema:
+            oneOf:
+              - $ref: ..\components\schemas\CartResponse.yaml
+              - $ref: ..\components\schemas\SubmitOrderResponse.yaml
+    '404':
+      description: Cart Not Found
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Cart-Not-Found-Error.yaml
+    '500':
+      description: Error Getting the Cart
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\500-Error.yaml

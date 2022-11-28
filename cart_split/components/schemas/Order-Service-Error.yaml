@@ -1,0 +1,14 @@
+type: object
+description: Order Service Failure
+properties:
+  status:
+    type: number
+    example: 400
+  title:
+    type: string
+    example: Error with Order Service API
+  detail:
+    type: string
+  type:
+    type: string
+    example: orderServiceError

@@ -1,0 +1,13 @@
+type: object
+description: Promo Service Failure
+properties:
+  status:
+    type: number
+    example: 400
+  title:
+    type: string
+  detail:
+    type: string
+  type:
+    type: string
+    example: promoServiceError

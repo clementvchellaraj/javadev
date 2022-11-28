@@ -1,0 +1,76 @@
+put:
+  operationId: cart_service.api.cart.apply_shipping
+  summary: Set Shipping Method
+  description: The shipping address must be set before applying a shipping method.
+  tags:
+    - cart
+  parameters:
+    - $ref: ..\components\parameters\cartId.yaml
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          x-body-name: request_dict
+          $ref: ..\components\schemas\ShippingMethodRequest.yaml
+  security:
+    - oktaJwt: []
+    - {}
+  responses:
+    '200':
+      description: Shipping method applied
+      content:
+        application/json:
+          schema:
+            oneOf:
+              - $ref: ..\components\schemas\CartResponse.yaml
+              - $ref: ..\components\schemas\SubmitOrderResponse.yaml
+    '400':
+      description: Error Setting Shipping Method
+      content:
+        application/json:
+          schema:
+            oneOf:
+              - $ref: ..\components\schemas\Cart-Processing-Error.yaml
+              - $ref: ..\components\schemas\Invalid-Shipping-Method-Error.yaml
+              - $ref: ..\components\schemas\Shipping-Address-Missing-Error.yaml
+              - $ref: ..\components\schemas\Restricted-Skus-Error.yaml
+              - $ref: ..\components\schemas\Validation-Error.yaml
+              - $ref: ..\components\schemas\Tax-Service-Error.yaml
+    '404':
+      description: Related Cart Does Not Exist
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Cart-Not-Found-Error.yaml
+delete:
+  operationId: cart_service.api.cart.remove_shipping_method
+  summary: Remove shipping address from cart
+  tags:
+    - cart
+  parameters:
+    - $ref: ..\components\parameters\cartId.yaml
+  security:
+    - oktaJwt: []
+    - {}
+  responses:
+    '200':
+      description: shipping method removed
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\CartResponse.yaml
+    '400':
+      description: Error Removing shipping method
+      content:
+        application/json:
+          schema:
+            oneOf:
+              - $ref: ..\components\schemas\400-Error.yaml
+              - $ref: ..\components\schemas\Tax-Service-Error.yaml
+    '404':
+      description: Related Cart Does Not Exist
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\404-Error.yaml

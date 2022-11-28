@@ -1,0 +1,13 @@
+type: object
+description: Error thrown by Connexion when validating request body
+properties:
+  status:
+    type: number
+    example: 400
+  title:
+    type: string
+    example: Bad Request
+  detail:
+    type: string
+  type:
+    type: string

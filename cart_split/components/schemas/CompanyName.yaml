@@ -1,0 +1,4 @@
+type: string
+example: Zoro
+description: Company name for shipping / billing
+maxLength: 35

@@ -1,0 +1,13 @@
+type: object
+properties:
+  status:
+    type: number
+    example: 400
+  title:
+    type: string
+    example: Invalid Billing Address
+  detail:
+    type: object
+  type:
+    type: string
+    example: invalidBillingAddress

@@ -1,0 +1,50 @@
+post:
+  operationId: cart_service.api.cart.set_billing_address
+  summary: Set Billing Address
+  tags:
+    - cart
+  parameters:
+    - $ref: ..\components\parameters\cartId.yaml
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          x-body-name: billing_dict
+          $ref: ..\components\schemas\BillingAddressRequest.yaml
+  security:
+    - oktaJwt: []
+    - {}
+  responses:
+    '200':
+      description: Billing Address Set Successfully
+      content:
+        application/json:
+          schema:
+            oneOf:
+              - $ref: ..\components\schemas\CartResponse.yaml
+              - $ref: ..\components\schemas\SubmitOrderResponse.yaml
+    '400':
+      description: Error setting a billing address
+      content:
+        application/json:
+          schema:
+            oneOf:
+              - $ref: ..\components\schemas\Cart-Processing-Error.yaml
+              - $ref: ..\components\schemas\Invalid-Billing-State-Error.yaml
+              - $ref: ..\components\schemas\Invalid-Billing-Zip-Error.yaml
+              - $ref: ..\components\schemas\Validation-Error.yaml
+              - $ref: ..\components\schemas\Tax-Service-Error.yaml
+    '404':
+      description: Error setting a billing address
+      content:
+        application/json:
+          schema:
+            oneOf:
+              - $ref: ..\components\schemas\Cart-Not-Found-Error.yaml
+    '500':
+      description: Error setting the billing address
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\500-Error.yaml

@@ -1,0 +1,6 @@
+description: >-
+  Destination city.  Required if country or territory does not utilize postal
+  codes. Length is not validated.
+example: Buffalo Grove
+maxLength: 30
+type: string

@@ -1,0 +1,10 @@
+type: object
+properties:
+  status:
+    type: number
+    example: 404
+  title:
+    type: string
+    example: Not Found
+  detail:
+    type: string

@@ -1,0 +1,23 @@
+description: Submit Order Request
+type: object
+properties:
+  email:
+    type: string
+    example: testing@test.com
+  orderId:
+    type: string
+    example: WB1645793847
+  purchaseNumber:
+    type: string
+    example: ZOROTEST
+    maxLength: 20
+  intendedForExport:
+    type: boolean
+  emailSubscription:
+    type: boolean
+  payment:
+    oneOf:
+      - $ref: .\Payment.yaml
+      - $ref: .\InvoicePayment.yaml
+    discriminator:
+      propertyName: type

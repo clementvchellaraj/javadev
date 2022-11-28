@@ -1,0 +1,5 @@
+description: Destination postal code. Length is not validated.
+example: '60089'
+minLength: 5
+maxLength: 10
+type: string

@@ -1,0 +1,8 @@
+description: Request to attach/update a billing address
+type: object
+additionalProperties: false
+required:
+  - billingAddress
+properties:
+  billingAddress:
+    $ref: .\BillingAddress.yaml

@@ -1,0 +1,89 @@
+description: List of Zoro items added to cart
+type: array
+items:
+  $ref: .\ResponseItem.yaml
+example:
+  - erpId: '159205'
+    image: ''
+    leadTime: 2
+    limitedShipping: false
+    price: 142.64
+    priceTotal: 142.64
+    freightCost: 0
+    freightTotal: 0
+    promotionDiscount: 10
+    promotionDiscountApplied: 142.64
+    promotionEligible: false
+    qty: 1
+    restrictedStates: []
+    hasCommercialShippingRestriction: false
+    salesStatus: ST
+    title: Concrete Tool Kit,7 PC
+    url: /i/G1739841/
+    minRetailQty: 1
+    maxOrderQty: 0
+    isAuthenticatedCheckoutOnly: false
+    zoroNo: G1739841
+    orderChannel: Default
+  - erpId: '1519'
+    image: ''
+    leadTime: 6
+    limitedShipping: false
+    price: 5.16
+    freightCost: 5
+    freightTotal: 10
+    priceTotal: 10.32
+    promotionDiscount: 10
+    promotionDiscountApplied: 10.32
+    promotionEligible: false
+    qty: 2
+    restrictedStates:
+      - CA
+      - CT
+      - DC
+      - DE
+      - IL
+      - IN
+      - MA
+      - MD
+      - ME
+      - MI
+      - NH
+      - NJ
+      - NY
+      - OH
+      - PA
+      - RI
+      - UT
+      - VA
+    hasCommercialShippingRestriction: false
+    salesStatus: ST
+    title: Gutter and Flashing Sealant,10.1oz,White
+    url: /i/G0014777/
+    minRetailQty: 1
+    maxOrderQty: 0
+    isAuthenticatedCheckoutOnly: false
+    zoroNo: G0014777
+    orderChannel: GRO
+  - erpId: '552115'
+    image: ''
+    leadTime: 1
+    limitedShipping: false
+    price: 21.99
+    freightCost: 0
+    freightTotal: 0
+    priceTotal: 21.99
+    promotionDiscount: 0
+    promotionDiscountApplied: 0
+    promotionEligible: false
+    qty: 1
+    restrictedStates: []
+    hasCommercialShippingRestriction: true
+    salesStatus: ST
+    title: Detergent,1 qt.
+    url: /i/G5160486/
+    minRetailQty: 1
+    maxOrderQty: 0
+    isAuthenticatedCheckoutOnly: false
+    zoroNo: G5160486
+    orderChannel: GRO

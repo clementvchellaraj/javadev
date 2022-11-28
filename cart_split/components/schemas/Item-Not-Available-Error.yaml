@@ -1,0 +1,21 @@
+type: object
+properties:
+  status:
+    type: number
+    example: 400
+  items:
+    type: array
+    description: The list of items temporarily unavailable.
+    example:
+      - G123456
+      - G987654
+    items:
+      type: string
+  title:
+    type: string
+    example: Item not available in Product Cache
+  detail:
+    type: object
+  type:
+    type: string
+    example: itemNotAvailable

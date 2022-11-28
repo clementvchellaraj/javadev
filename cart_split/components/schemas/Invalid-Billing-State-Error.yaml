@@ -1,0 +1,14 @@
+type: object
+properties:
+  status:
+    type: number
+    example: 400
+  title:
+    type: string
+    example: Bad Request
+  detail:
+    type: string
+    example: Invalid Billing State
+  type:
+    type: string
+    example: invalidShippingState

@@ -1,0 +1,42 @@
+openapi: 3.0.0
+info:
+  title: Cart Service API
+  version: /v2.1.25a
+  description: Cart Service API
+servers:
+  - url: /v1
+tags:
+  - name: health
+    description: Health
+paths:
+  /cart/health:
+    $ref: paths/cart_health.yaml
+  /cart:
+    $ref: paths/cart.yaml
+  /cart/{cartId}:
+    $ref: paths/cart_{cartId}.yaml
+  /cart/{cartId}/merge:
+    $ref: paths/cart_{cartId}_merge.yaml
+  /cart/{cartId}/items:
+    $ref: paths/cart_{cartId}_items.yaml
+  /cart/{cartId}/submitorder:
+    $ref: paths/cart_{cartId}_submitorder.yaml
+  /cart/{cartId}/items/{zoroNo}:
+    $ref: paths/cart_{cartId}_items_{zoroNo}.yaml
+  /cart/{cartId}/shippingaddress:
+    $ref: paths/cart_{cartId}_shippingaddress.yaml
+  /cart/{cartId}/billingaddress:
+    $ref: paths/cart_{cartId}_billingaddress.yaml
+  /cart/{cartId}/shippingmethod:
+    $ref: paths/cart_{cartId}_shippingmethod.yaml
+  /cart/clearcache:
+    $ref: paths/cart_clearcache.yaml
+  /cart/{cartId}/promo:
+    $ref: paths/cart_{cartId}_promo.yaml
+components:
+  securitySchemes:
+    oktaJwt:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      x-bearerInfoFunc: cart_service.api.auth.verify

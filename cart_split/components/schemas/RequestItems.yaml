@@ -1,0 +1,11 @@
+description: List of items
+type: array
+items:
+  $ref: .\RequestItem.yaml
+example:
+  - qty: 1
+    zoroNo: G1739841
+  - qty: 2
+    zoroNo: G0014777
+  - qty: 3
+    zoroNo: H9999999

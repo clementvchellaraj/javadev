@@ -1,0 +1,6 @@
+name: cartId
+description: The cart unique identifier
+in: path
+required: true
+schema:
+  $ref: ..\schemas\CartNumber.yaml

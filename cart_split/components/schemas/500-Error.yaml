@@ -1,0 +1,10 @@
+type: object
+properties:
+  status:
+    type: number
+    example: 500
+  title:
+    type: string
+    example: Server Error
+  detail:
+    type: string

@@ -1,0 +1,5 @@
+type: string
+example: 'Suite #1000'
+maxLength: 35
+items:
+  type: string
